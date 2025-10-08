@@ -1,0 +1,33 @@
+{
+  "name": "abir-playwright-775",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "test:debug": "npx playwright test --debug",
+    "test:ui": "npx playwright test --ui",
+    "test:chrome": "npx playwright test --project=chromium",
+    "test:chrome:ui": "npx playwright test --project=chromium --ui",
+    "test:headed:chrome": "npx playwright test --headed --project=chromium",
+    "test:headed:ui": "npx playwright test --headed --ui",
+    "test:headed:chrome:ui": "npx playwright test --headed --project=chromium --ui"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DSI-QA-AUTOMATION/ABIR-PLAYWRIGHT-775.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/DSI-QA-AUTOMATION/ABIR-PLAYWRIGHT-775/issues"
+  },
+  "homepage": "https://github.com/DSI-QA-AUTOMATION/ABIR-PLAYWRIGHT-775#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.55.1",
+    "@types/node": "^24.5.2"
+  }
+}
