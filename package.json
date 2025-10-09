@@ -12,7 +12,9 @@
     "test:chrome:ui": "npx playwright test --project=chromium --ui",
     "test:headed:chrome": "npx playwright test --headed --project=chromium",
     "test:headed:ui": "npx playwright test --headed --ui",
-    "test:headed:chrome:ui": "npx playwright test --headed --project=chromium --ui"
+    "test:headed:chrome:ui": "npx playwright test --headed --project=chromium --ui",
+    "codegen": "npx playwright codegen",
+    "codegen:save": "npx playwright codegen --output"
   },
   "repository": {
     "type": "git",

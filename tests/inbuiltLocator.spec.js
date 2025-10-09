@@ -13,6 +13,8 @@ import {test, expect} from '@playwright/test';
 test('Built-in Locator Strategies', async ({page}) => {
     await page.goto('https://demoqa.com/');
 
+    await expect(page).toHaveTitle('DEMOQA');
+
     const downArrow = page.getByTitle('Ad.Plus Advertising');
     await expect(downArrow).toBeVisible();
 
