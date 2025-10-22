@@ -18,14 +18,10 @@ test('Testing dropdowns', async ({ page }) => {
     // Standard multi select
     await page.locator('#cars').selectOption(['volvo', 'audi']);
 
-    // Multi select with the custom dropdown
+    // Multi select without the select tag
     let dropDownText = 'Select...';
     await page.locator(`//div[text()='${dropDownText}']`).click();
-    // await page.getByText('Green', { exact: true }).click();
     await page.locator('//div[text()="Green"]').click();
-    // dropDownText = 'Green';
-    // await page.locator(`//div[text()='${dropDownText}']`).click();
-    // await page.getByText('Black', { exact: true }).click();
     await page.locator('//div[text()="Black"]').click();
 
     await expect(page.locator('div[class*="multiValue"]')).toHaveCount(2);
