@@ -26,7 +26,7 @@ test('Testing inbox fields, radio buttons, che', async ({ page }) => {
   await expect(await page.locator('#hobbies-checkbox-1')).toBeChecked();
   await expect(await page.locator('#hobbies-checkbox-3')).toBeChecked();
 
-  // Dropdowns
+  // Dropdowns (without the select tag)
   await page.locator('//div[text()="Select State"]').click();
   await page.getByText('Uttar Pradesh', {exact: true}).click();
   await page.locator('#city svg').click();
@@ -38,6 +38,8 @@ test('Testing inbox fields, radio buttons, che', async ({ page }) => {
   const submittedHeader = page.locator('#example-modal-sizes-title-lg');
   await expect(submittedHeader).toContainText('Thanks for submitting the form');
   await expect(page.locator('tbody')).toContainText('Hello There');
+
+  await page.locator('#closeLargeModal').click({force: true});
 
   await page.close();
 });
