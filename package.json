@@ -14,7 +14,8 @@
     "test:headed:ui": "npx playwright test --headed --ui",
     "test:headed:chrome:ui": "npx playwright test --headed --project=chromium --ui",
     "codegen": "npx playwright codegen",
-    "codegen:save": "npx playwright codegen --output"
+    "codegen:save": "npx playwright codegen --output",
+    "show-report": "npx playwright show-report"
   },
   "repository": {
     "type": "git",
