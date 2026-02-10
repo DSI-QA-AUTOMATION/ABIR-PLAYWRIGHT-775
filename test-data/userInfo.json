@@ -1,0 +1,36 @@
+{
+    "textBoxUser": {
+        "fullName": "John Doe",
+        "email": "john.doe@example.com",
+        "currentAddress": "123 Main St, Anytown, USA",
+        "permanentAddress": "456 Elm St, Othertown, USA"
+    },
+
+    "webTableUser": {
+        "firstName": "Jane",
+        "lastName": "Smith",
+        "email": "jane.smith@example.com",
+        "age": "28",
+        "salary": "55000",
+        "department": "Engineering"
+    },
+
+    "practiceFormUser": {
+        "firstName": "Alice",
+        "lastName": "Johnson",
+        "email": "alice.johnson@example.com",
+        "gender": "Female",
+        "mobile": "9876543210",
+        "dateOfBirth": {
+            "day": "15",
+            "month": "May",
+            "year": "1995"
+        },
+        "subjects": ["Maths", "Physics", "Chemistry"],
+        "hobbies": ["Sports", "Reading"],
+        "picture": "alice_photo.png",
+        "address": "789 New Delhi Street",
+        "state": "NCR",
+        "city": "Delhi"
+    }
+}

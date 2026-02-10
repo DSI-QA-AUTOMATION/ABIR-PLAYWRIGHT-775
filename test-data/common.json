@@ -1,0 +1,31 @@
+{
+    "url": "https://demoqa.com/",
+    "clickMessages":
+    {
+        "dbClickMsg": "You have done a double click",
+        "rightClickMsg": "You have done a right click",
+        "dynamicClickMsg": "You have done a dynamic click"
+    },
+    "resources": {
+        "fileToUpload": "resources/sampleFile.txt",
+        "fileName": "sampleFile.txt"
+    },
+    "promptMessage": "Playwright Testing",
+    "frameMessage": "This is a sample page",
+    "toolTipMessage": 
+    {
+        "button": "You hovered over the Button",
+        "input": "You hovered over the text field",
+        "link": "You hovered over the Contrary"
+    },
+    "datePickerInput":
+    {
+        "date": "08/03/2025",
+        "dateTime": "June 20, 2024 10:30 AM",
+        "month": "December",
+        "year": "2024",
+        "day": "25",
+        "expectedDate": "12/25/2024"
+    },
+    "dropBoxText": "Dropped!"
+}

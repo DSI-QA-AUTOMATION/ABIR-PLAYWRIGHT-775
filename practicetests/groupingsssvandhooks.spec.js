@@ -1,14 +1,14 @@
 import { test, expect} from '@playwright/test';
 
+// let page;
 // test.beforeAll(async ({browser}) => {
 //     console.log('This is executed before all tests');
-//     const page = await browser.newPage();
+//     page = await browser.newPage();
 //     await page.goto('https://demoqa.com');
 // });
 
-// test.afterAll(async ({browser}) => {
+// test.afterAll(async () => {
 //     console.log('This is executed after all tests');
-//     const page = await browser.newPage();
 //     await page.close();
 // });
 

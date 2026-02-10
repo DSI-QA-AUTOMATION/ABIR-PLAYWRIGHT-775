@@ -53,5 +53,5 @@ test("Testing webtables", async ({ page }) => {
 
     expect(await table.textContent()).not.toContain(firstName);
 
-    await page.close();
+    await page.close(); 
 });
