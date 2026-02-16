@@ -29,7 +29,6 @@ test("Add new record to web table and verify", async ({ page }) => {
 });
 
 test("Edit existing record in web table", async ({ page }) => {
-    console.log("This is edit web table test case");
     const firstName = "Alden";
     const itemValue = "55000";
 
@@ -39,7 +38,6 @@ test("Edit existing record in web table", async ({ page }) => {
 });
 
 test("Delete record from web table", async ({ page }) => {
-    console.log("This is delete web table test case");
     const firstName = "Kierra"; 
 
     await webTablesPage.deleteRecord(page, firstName);

@@ -1,16 +1,10 @@
 import { expect } from '@playwright/test';
 
 class HomePage {
-
-    // constructor(page) {
-    //     this.page = page;
-    //     this.headerImg = "header a img";
-    // }
-
-    // Selectors
+    // Locators
     headerImg = "header a img";
     bannerImg = ".banner-image";
-    categoryCards = ".category-cards > div";
+    categoryCards = ".category-cards > a";
 
     // Methods
     async verifyHeaderImage(page) {

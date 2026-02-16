@@ -5,25 +5,25 @@ class BasePage {
     // Locators
     headerSelector = "h1";
 
-    // Helper
+    // Helpers
     getElementsMenuLocatorByIndex(index) {
-        return `.element-group:nth-child(1) li[id='item-${index}']`;
+        return `.element-group:nth-child(1) li[id='item-${index}'] > a`;
     }
 
     getFormsMenuLocatorByIndex(index) {
-        return `.element-group:nth-child(2) li[id='item-${index}']`;
+        return `.element-group:nth-child(2) li[id='item-${index}'] > a`;
     }
 
     getAlertsMenuLocatorByIndex(index) {
-        return `.element-group:nth-child(3) li[id='item-${index}']`;
+        return `.element-group:nth-child(3) li[id='item-${index}'] > a`;
     }
 
     getWidgetsMenuLocatorByIndex(index) {
-        return `.element-group:nth-child(4) li[id='item-${index}']`;
+        return `.element-group:nth-child(4) li[id='item-${index}'] > a`;
     }
 
     getInteractionsMenuLocatorByIndex(index) {
-        return `.element-group:nth-child(5) li[id='item-${index}']`;
+        return `.element-group:nth-child(5) li[id='item-${index}'] > a`;
     }
 
     // Methods
@@ -32,7 +32,8 @@ class BasePage {
     }
 
     async clickOnElementsMenuItem(page, index) {
-        await page.locator(this.getElementsMenuLocatorByIndex(index-1)).click();
+        const menuItem = page.locator(this.getElementsMenuLocatorByIndex(index-1));
+        await menuItem.click();
     }
 
     async clickOnFormsMenuItem(page, index) {

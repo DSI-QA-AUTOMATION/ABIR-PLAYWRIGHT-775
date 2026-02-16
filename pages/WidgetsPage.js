@@ -26,9 +26,8 @@ class WidgetsPage {
         return page.getByRole(this.tooltipRole);
     }
 
-    async waitForTooltipVisibility(tooltip) {
-        await tooltip.waitFor({ state: 'visible' });
-        await tooltip.page().waitForTimeout(2000);
+    async waitForTooltipToDisappear(tooltip) {
+        await tooltip.waitFor({ state: 'hidden' });
     }
 
     async verifyTooltipIsVisible(tooltip) {
@@ -37,6 +36,10 @@ class WidgetsPage {
 
     async verifyTooltipText(tooltip, expectedText) {
         expect(await tooltip.textContent()).toBe(expectedText);
+    }
+
+    async moveMouse(page, x, y) {
+        await page.mouse.move(x, y);
     }
 
 }

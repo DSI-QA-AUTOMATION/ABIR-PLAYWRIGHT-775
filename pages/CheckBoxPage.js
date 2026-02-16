@@ -2,22 +2,19 @@ import { expect } from "@playwright/test";
 
 class CheckBoxPage {
     // Locators
-    expandAllButton = "button[title='Expand all']";
-    notesCheckBox = "#tree-node-notes + span";
-    publicCheckBox = "#tree-node-public + span";
+    expandSpan = "span[class*='rc-tree-switcher']";
+    checkBoxSpan = "span[class*='rc-tree-checkbox']";
     resultText = "#result";
 
     // Methods
-    async clickExpandAllButton(page) {
-        await page.locator(this.expandAllButton).click();
+    async expandFolder(page, folderName) {
+        const expandButton = page.getByTitle(folderName).locator("..").locator(this.expandSpan);
+        await expandButton.click();
     }
 
-    async selectNotesCheckBox(page) {
-        await page.locator(this.notesCheckBox).click();
-    }
-
-    async selectPublicCheckBox(page) {
-        await page.locator(this.publicCheckBox).click();
+    async checkFolderOrFile(page, name) {
+        const checkBox = page.getByTitle(name).locator("..").locator(this.checkBoxSpan);
+        await checkBox.click();
     }
 
     async verifyResultContains(page, expectedText) {

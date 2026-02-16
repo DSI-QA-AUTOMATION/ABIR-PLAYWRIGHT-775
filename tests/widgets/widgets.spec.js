@@ -19,17 +19,18 @@ test("Testing mouse hover actions using POM", async ({ page }) => {
     const toolTip = await widgetsPage.getTooltipElement(page);
 
     await widgetsPage.hoverOverButton(page);
-    await widgetsPage.waitForTooltipVisibility(toolTip);
     await widgetsPage.verifyTooltipIsVisible(toolTip);
     await widgetsPage.verifyTooltipText(toolTip, toolTipMessage.button);
+    await widgetsPage.moveMouse(page, 0, 0);
 
+    await widgetsPage.waitForTooltipToDisappear(toolTip);
     await widgetsPage.hoverOverInput(page);
-    await widgetsPage.waitForTooltipVisibility(toolTip);
     await widgetsPage.verifyTooltipIsVisible(toolTip);
     await widgetsPage.verifyTooltipText(toolTip, toolTipMessage.input);
+    await widgetsPage.moveMouse(page, 0, 0);
 
+    await widgetsPage.waitForTooltipToDisappear(toolTip);
     await widgetsPage.hoverOverLink(page);
-    await widgetsPage.waitForTooltipVisibility(toolTip);
     await widgetsPage.verifyTooltipIsVisible(toolTip);
     await widgetsPage.verifyTooltipText(toolTip, toolTipMessage.link);
 

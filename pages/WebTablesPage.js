@@ -4,9 +4,8 @@ class WebTablesPage {
     // Locators
     addNewRecordButton = "#addNewRecordButton";
     submitButton = "button[type='submit']";
-    tableLoc = ".rt-table";
-    rowsLoc = `${this.tableLoc} .rt-tbody .rt-tr`;
-    columsnHeaders = `${this.tableLoc} .rt-thead .rt-th`;
+    rowsLoc = "table > tbody > tr";
+    columnsHeaders = "table > thead > tr > th";
     editIcon = "span[title='Edit']";
     deleteIcon = "span[title='Delete']";
 
@@ -51,13 +50,13 @@ class WebTablesPage {
     }
 
     async verifyRecordInTable(page, userData) {
-        const tableContent = await page.locator(this.tableLoc).textContent();
-        expect(tableContent).toContain(userData.firstName);
-        expect(tableContent).toContain(userData.lastName);
-        expect(tableContent).toContain(userData.email);
-        expect(tableContent).toContain(userData.age);
-        expect(tableContent).toContain(userData.salary);
-        expect(tableContent).toContain(userData.department);
+        const newUserData = await page.locator(this.rowsLoc).last().textContent();
+        expect(newUserData).toContain(userData.firstName);
+        expect(newUserData).toContain(userData.lastName);
+        expect(newUserData).toContain(userData.email);
+        expect(newUserData).toContain(userData.age);
+        expect(newUserData).toContain(userData.salary);
+        expect(newUserData).toContain(userData.department);
     }
 
     async clickEditButton(page, firstName) {

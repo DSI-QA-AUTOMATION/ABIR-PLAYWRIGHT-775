@@ -15,9 +15,13 @@ test("Verify Check Box functionality", async ({ page }) => {
     await basePage.clickOnElementsMenuItem(page, 2);
     await basePage.verifyPageHeader(page, "Check Box");
 
-    await checkBoxPage.clickExpandAllButton(page);
-    await checkBoxPage.selectNotesCheckBox(page);
-    await checkBoxPage.selectPublicCheckBox(page);
+    await checkBoxPage.expandFolder(page, "Home");
+    await checkBoxPage.expandFolder(page, "Desktop");
+    await checkBoxPage.checkFolderOrFile(page, "Notes");
     await checkBoxPage.verifyResultContains(page, "notes");
+
+    await checkBoxPage.expandFolder(page, "Documents");
+    await checkBoxPage.expandFolder(page, "Office");
+    await checkBoxPage.checkFolderOrFile(page, "Public");
     await checkBoxPage.verifyResultContains(page, "public");
 });
